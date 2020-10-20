@@ -1,0 +1,302 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4"><h4>Employment</h4></div>
+    <div class="col-sm-4">
+      <button
+        type="button"
+        class="btn btn-link"
+        data-toggle="modal"
+        data-target="#employmentModalLong"
+      >
+        ADD EMPLOYMENT
+      </button>
+    </div>
+    <div class="col-sm-4"></div>
+
+    <div
+      class="modal fade"
+      id="employmentModalLong"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+      
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Add Employment
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="background-color: blanchedalmond;">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="yourDesgination"
+                  >Your Desgination
+                  <strong class="text-danger">*</strong></label
+                >
+                <input
+                  type="text"
+                  name="yourDesgination"
+                  id="yourDesgination"
+                  class="form-control"
+                  placeholder="Type Your Desgination"
+                  [(ngModel)]="empModel.designation"
+                />
+              </div>
+            </div>
+            <!---------------------------------------------------->
+            <div class="col-12">
+              <div class="form-group">
+                <label for="yourOrganisation"
+                  >Your Organisation<strong class="text-danger"
+                    >*</strong
+                  ></label
+                >
+                <input
+                  type="text"
+                  name="yourOrganisation"
+                  id="yourOrganisation"
+                  class="form-control"
+                  placeholder="Type Your Organisation"
+                  [(ngModel)]="empModel.organisation"
+                />
+           
+              </div>
+            </div>
+          
+            <div class="col-12">
+              <label>Is this your current company?</label>
+              <div class="form-group">
+                <input
+                  type="radio"
+                  name="currentCompany"
+                  id="currentCompany"
+                  class="mr-2"
+                  value="yes"
+                   checked="checked"
+                  [(ngModel)]="empModel.currentCompany"
+                />
+                <label class="mr-2">Yes</label>
+                <input
+                  type="radio"
+                  name="currentCompany"
+                  id="currentCompany"
+                  class="mr-2"
+                  value="no"
+                  [(ngModel)]="empModel.currentCompany"
+                />
+                <label class="mr-2">No</label>
+              </div>
+            </div>
+
+            <!------------------------------------------------------->
+
+            <div class="row">
+              <label for="startedWorkingFrom"></label>
+              <div class="col-sm-5">
+                <select
+                  name="selectMonth"
+                  id="selectMonth"
+                  class="form-control"
+                  [(ngModel)]="swf.selectYear"
+                >
+                  <option value="">Select Year</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                </select>
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <select
+                  name="selectMonth"
+                  id="selectMonth"
+                  class="form-control"
+                  [(ngModel)]="swf.selectMonth"
+                >
+                  <option value="">Select Month</option>
+                  <option value="Jan">Jan</option>
+                  <option value="Feb">Feb</option>
+                  <option value="Mar">Mar</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="Jun">Jun</option>
+                  <option value="July">July</option>
+                  <option value="Sep">Sep</option>
+                  <option value="Oct">Oct</option>
+
+                  <option value="Nov">Nov</option>
+                  <option value="Dec">Dec</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-group">
+                <label
+                  >Worked Till <strong class="text-danger">*</strong></label
+                >
+                <input
+                  type="text"
+                  name="workedTill"
+                  id="workedTill"
+                  readonly
+                  value="Present"
+                  class="form-control"
+                  [(ngModel)]="empModel.workedTill"
+                />
+              </div>
+            </div>
+            <!--------------------------------------------->
+
+            <div class="col-12">
+              <label for="currentSalary"
+                >Current Salary<strong class="text-danger">*</strong></label
+              >
+              <div class="form-group">
+                <input
+                  type="radio"
+                  name="currentSalary"
+                  id="currentSalary"
+                  class="mr-2"
+                  value="indianRupees"
+                  [(ngModel)]="empModel.currentSalaryRadio"
+                />
+                <label class="mr-2">Indian Rupees</label>
+                <input
+                  type="radio"
+                  name="currentSalary"
+                  id="currentSalary"
+                  class="mr-2"
+                 
+                  value="usDollars"
+                  [(ngModel)]="empModel.currentSalaryRadio"
+                />
+                <label class="mr-2">US Dollars</label>
+
+                <div class="row">
+                  <label for="currentSalary"></label>
+                  <div class="col-sm-5">
+                    <select
+                      name="selectLac"
+                      id="selectLac"
+                      class="form-control"
+                      [(ngModel)]="cs.inLacks"
+                    >
+                      <option value="0 Lac">0 Lac</option>
+                      <option value="1 Lac">1 Lac</option>
+                      <option value="2 Lac">2 Lac</option>
+                      <option value="3 Lac">3 Lac</option>
+                      <option value="4 Lac">4 Lac</option>
+                      <option value="5 Lac">5 Lac</option>
+                      <option value="6 Lac">6 Lac</option>
+                      <option value="7 Lac">7 Lac</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-5">
+                    <select
+                      name="selectThousand"
+                      id="selectThousand"
+                      class="form-control"
+                      scroll
+                      [(ngModel)]="cs.inThousands"
+                    >
+                      <option value="0 Thousand">0 Thousand</option>
+                      <option value="5 Thousand">5 Thousand</option>
+                      <option value="10 Thousand">10 Thousand</option>
+                      <option value="15 Thousand">15 Thousand</option>
+                      <option value="20 Thousand">20 Thousand</option>
+                      <option value="25 Thousand">25 Thousand</option>
+                      <option value="30 Thousand">30 Thousand</option>
+                      <option value="35 Thousand">35 Thousand</option>
+                      <option value="40 Thousand">40 Thousand</option>
+                      <option value="45 Thousand">45 Thousand</option>
+
+                      <option value="50 Thousand">50 Thousand</option>
+                      <option value="55 Thousand">55 Thosand</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-group">
+                <label
+                  >Top 5 key skills that you think are important for current
+                  employment <strong class="text-danger">*</strong></label
+                >
+                <textarea
+                  name="fiveSkills"
+                  id="fiveSkills"
+                  cols="30"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Enter your area of Expertise/Specilazation"
+                  [(ngModel)]="empModel.keySkills"
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Describe Your Job Profile<strong class="text-danger">*</strong></label>
+                <textarea
+                  name="jobProfile"
+                  id="jobProfile"
+                  cols="30"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Type here..."
+                  [(ngModel)]="empModel.jobProfile"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <label>Notice Period</label>
+              <select
+                name="selectLac"
+                id="selectLac"
+                class="form-control"
+                aria-placeholder="Select Notice Period"
+                [(ngModel)]="empModel.noticePeriod"
+              >
+                <option value="0 Lac">15 days or less</option>
+                <option value="1 Lac">1 Month</option>
+                <option value="2 Lac">2 Month</option>
+                <option value="3 Lac">3 Month</option>
+                <option value="3 Lac">More than 3 Month</option>
+                <option value="3 Lac">Servicing Notice Period</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
