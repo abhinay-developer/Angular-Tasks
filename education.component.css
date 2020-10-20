@@ -1,0 +1,11 @@
+.btn btn-link{
+    text-decoration: none;
+}
+
+.btn btn-link:hover{
+    
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-rendering: none;
+}
