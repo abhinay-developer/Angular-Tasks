@@ -1,0 +1,15 @@
+.modal-content{
+
+    width: 100%;
+}
+
+.nounderline {
+    text-decoration: none !important;
+ 
+    border: none;
+  }
+  button:hover{
+    text-decoration: none !important;
+
+    border: none;
+  }

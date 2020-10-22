@@ -1,0 +1,290 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <button
+        type="button"
+        class="btn btn-link text-primary"
+        data-toggle="modal"
+        data-target="#employmentModalLong"
+      >
+        ADD PROJECT
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="employmentModalLong"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">ADD PROJECT</h5>
+
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="projectTitle"
+              >Project Title<strong class="text-danger">*</strong></label
+            >
+            <input
+              type="text"
+              name="projectTitle"
+              id="projectTitle"
+              placeholder="Enter Project Title"
+              class="form-control"
+              [(ngModel)]="pModel.projectTitle"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="emp">
+              Tag this project with your Employment/Education<strong
+                class="text-danger"
+                >*</strong
+              ></label
+            >
+
+            <select
+              name="emp"
+              id="emp"
+              class="form-control"
+              [(ngModel)]="pModel.employmentOrEducation"
+            >
+              <option value="" selected disabled>
+                Select Employment/Education
+              </option>
+              <option value="UG-Computers">UG-Computers</option>
+              <option value="Class XI">Class XI</option>
+              <option value="Class X">Class X</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="client"
+              >Client<strong class="text-danger">*</strong></label
+            >
+            <input
+              type="text"
+              name="client"
+              id="client"
+              class="form-control"
+              placeholder="Enter Client Name"
+              [(ngModel)]="pModel.client"
+            />
+          </div>
+
+          <div class="form-group">
+            <div>
+              <label for="projectStatus">Project Status</label>
+            </div>
+            <input
+              type="radio"
+              name="projectStatus"
+              id="inProgress-id"
+              checked
+              value="inProgress"
+              [(ngModel)]="pModel.projectStatus"
+            /><label>In Progress</label>
+            <input
+              type="radio"
+              name="projectStatus"
+              id="finished-id"
+              value="finished"
+              [(ngModel)]="pModel.projectStatus"
+            /><label>Finished</label>
+          </div>
+
+          <div class="form-group">
+            <label
+              >Work Started Form <strong class="text-danger">*</strong></label
+            >
+            <div class="row">
+              <div class="col-sm-4">
+                <select
+                  name="selectYear"
+                  id="selectYear"
+                  class="form-control"
+                  [(ngModel)]="swf.selectYear"
+                >
+                  <option value="2020">2020</option>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <select
+                  name="selectMonth"
+                  id="selectMonth"
+                  class="form-control"
+                  [(ngModel)]="swf.selectMonth"
+                >
+                  <option value="2019">2019</option>
+                </select>
+              </div>
+              <div class="col-sm-4"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="workedTill">Worked Till</label>
+            <div class="col-sm-4">
+              <input
+                type="text"
+                name="workedTill"
+                id="workedTill"
+                class="form-control"
+                [(ngModel)]="pModel.workedTill"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="projectDetails"
+              >Project Details<strong class="text-danger">*</strong></label
+            >
+            <textarea
+              name="projectDetails"
+              id=""
+              cols="50"
+              rows="5"
+              [(ngModel)]="pModel.detailsOfProject"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-link"
+              (click)="addMoreDetails()"
+              [hidden]="pModel.isAddMoreDetails"
+            >
+              Add More Details
+            </button>
+          </div>
+          <div class="addMoreDetails" [hidden]="!pModel.isAddMoreDetails">
+            <div class="form-group">
+              <input
+                type="text"
+                name="projectLocation"
+                id="projectLocation"
+                placeholder="Enter Project Location"
+                class="form-control"
+                [(ngModel)]="pModel.projectLocation"
+              />
+            </div>
+
+            <div class="form-group">
+              <div><label for="projectSite">Project Site</label></div>
+              <input
+                type="radio"
+                name="projectSite"
+                id="Offsite"
+                checked
+                [(ngModel)]="pModel.projectSite"
+                value="offsite"
+              /><label>Offsite</label>
+              <input
+                type="radio"
+                name="projectSite"
+                id="Onsite"
+                value="onsite"
+                [(ngModel)]="pModel.projectSite"
+              /><label>Onsite</label>
+            </div>
+
+            <div class="form-group">
+              <div>
+                <label for="natureOfEmployment">Nature Of Employment</label>
+              </div>
+              <input
+                type="radio"
+                name="natureOfEmployment"
+                id="fullTime"
+                value="fullTime"
+                checked
+                [(ngModel)]="pModel.natureOfEmployment"
+              /><label>Full Time</label>
+              <input
+                type="radio"
+                name="natureOfEmployment"
+                id="partTime"
+                value="partTime"
+                [(ngModel)]="pModel.natureOfEmployment"
+              /><label>Part Time</label>
+              <input
+                type="radio"
+                name="natureOfEmployment"
+                id="contractral"
+                value="contractral"
+                [(ngModel)]="pModel.natureOfEmployment"
+              /><label>Contractral</label>
+            </div>
+
+            <div class="form-group">
+              <label for="timeSize">Team Size</label>
+              <select
+                name="timeSize"
+                id="timeSize"
+                class="form-control"
+                [(ngModel)]="pModel.teamSize"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="role">Role</label>
+              <select
+                name="role"
+                id="role"
+                class="form-control"
+                [(ngModel)]="pModel.role"
+              >
+                <option value="TeamLeader">Team Leader</option>
+                <option value="ProjectLeader">ProjectLeader</option>
+                <option value="Programmer">Programmer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="roleDescription">Role Description</label>
+              <textarea
+                name="roleDescription"
+                id="roleDescription"
+                cols="60"
+                rows="5"
+                class="form-control"
+                [(ngModel)]="pModel.roleDescription"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="skillsUsed">Skills Used </label>
+              <input
+                type="text"
+                name="skillsUsed"
+                id="skillsUsed"
+                class="form-control"
+                [(ngModel)]="pModel.skills"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" (click)="save()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
