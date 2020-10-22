@@ -1,0 +1,45 @@
+<div class="container">
+<h3>Profile Summary</h3> <span ><button type="button" class="btn  btn-primary btn-sm "
+    data-toggle="modal" 
+    data-target="#employmentModalLong">ADD</button></span>
+
+
+<div
+class="modal fade"
+id="employmentModalLong"
+tabindex="-1"
+role="dialog"
+aria-labelledby="exampleModalLongTitle"
+aria-hidden="true"
+
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">
+        Profile Summary
+      </h5>
+    
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" >
+        <p>Your Profile Summary should mention the highlights of your career and education, what your professional interests are, and what kind of a career you are looking for. Write a meaningful summary of more than 50 characters.</p>
+  
+        <textarea name="profile" id="profile" cols="55" rows="5" [(ngModel)]="psm.profile"></textarea>
+   
+    </div>
+    <div class="modal-footer">
+     <button class="btn btn-success" (click)="onSave()">Save</button>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
